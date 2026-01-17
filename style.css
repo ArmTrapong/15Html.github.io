@@ -1,0 +1,21 @@
+/* style.css */
+:root {
+    --primary-color: #4A90E2;
+}
+
+body {
+    /* 1. url() - ดึงรูปภาพจากที่อยู่ไฟล์ */
+    background-image: url('https://v.fastcdn.co/u/a34a810d/62029532-0-Pattern-Grid.png');
+    font-family: sans-serif;
+}
+
+header {
+    /* 2. linear-gradient() - ไล่สีจากฟ้าไปน้ำเงิน */
+    background: linear-gradient(90deg, #4A90E2, #1456a3);
+    
+    /* 3. var() - ใช้ค่าจากตัวแปรที่ตั้งไว้ด้านบน */
+    border-bottom: 5px solid var(--primary-color);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
