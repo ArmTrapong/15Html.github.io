@@ -2,39 +2,60 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css"> <title>CSS 3 Functions per File</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal CSS with 3 Functions</title>
 
     <style>
-        /* Internal CSS */
-        .content-box {
-            /* 1. calc() - กำหนดความกว้างแบบลบค่าคงที่ออก */
-            width: calc(100% - 60px); 
-            margin: 20px auto;
+        /* -----------------------------------------
+           INTERNAL CSS 
+           ----------------------------------------- */
+        
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Kanit', sans-serif;
 
-            /* 2. rgba() - สีขาวแบบโปร่งใส 90% */
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            /* ฟังก์ชันที่ 1: linear-gradient() 
+               สร้างพื้นหลังไล่เฉดสีให้ดูมีมิติ */
+            background: linear-gradient(45deg, #ee0979, #ff6a00);
         }
 
-        h2 {
-            /* 3. clamp() - ฟอนต์จะเล็กสุด 20px, ใหญ่สุด 40px 
-               และปรับตามความกว้างหน้าจอ (5vw) ระหว่างนั้น */
-            font-size: clamp(20px, 5vw, 40px);
+        .container {
+            /* ฟังก์ชันที่ 2: calc() 
+               คำนวณความกว้าง: เต็มจอ 100% ลบออก 40px เพื่อให้มีขอบเสมอ */
+            width: calc(100% - 40px);
+            max-width: 500px;
+            
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            /* ฟังก์ชันที่ 3: clamp() 
+               ตัวอักษรจะปรับขนาดเอง: เล็กสุด 24px, ใหญ่สุด 48px 
+               เปลี่ยนตามความกว้างหน้าจอ (5vw) */
+            font-size: clamp(24px, 5vw, 48px);
             color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>My Website</h1>
-    </header>
-
-    <div class="content-box">
-        <h2>หัวข้อที่ปรับขนาดตามหน้าจอ</h2>
-        <p>กล่องนี้มีการใช้ฟังก์ชัน calc() ในการคำนวณความกว้าง และ rgba() เพื่อทำความใสครับ</p>
+    <div class="container">
+        <h1>Modern CSS</h1>
+        <p>ตัวอย่างการใช้ฟังก์ชัน linear-gradient, calc และ clamp ภายในไฟล์เดียว</p>
     </div>
 
 </body>
