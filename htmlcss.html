@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"> <title>CSS 3 Functions per File</title>
+
+    <style>
+        /* Internal CSS */
+        .content-box {
+            /* 1. calc() - กำหนดความกว้างแบบลบค่าคงที่ออก */
+            width: calc(100% - 60px); 
+            margin: 20px auto;
+
+            /* 2. rgba() - สีขาวแบบโปร่งใส 90% */
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            /* 3. clamp() - ฟอนต์จะเล็กสุด 20px, ใหญ่สุด 40px 
+               และปรับตามความกว้างหน้าจอ (5vw) ระหว่างนั้น */
+            font-size: clamp(20px, 5vw, 40px);
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Website</h1>
+    </header>
+
+    <div class="content-box">
+        <h2>หัวข้อที่ปรับขนาดตามหน้าจอ</h2>
+        <p>กล่องนี้มีการใช้ฟังก์ชัน calc() ในการคำนวณความกว้าง และ rgba() เพื่อทำความใสครับ</p>
+    </div>
+
+</body>
+</html>
