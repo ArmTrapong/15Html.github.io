@@ -1,21 +1,39 @@
 /* style.css */
+
+/* ประกาศตัวแปรไว้ที่นี่ */
 :root {
-    --primary-color: #4A90E2;
+    --main-accent: #00d2ff;
+    --secondary-accent: #3a7bd5;
 }
 
 body {
-    /* 1. url() - ดึงรูปภาพจากที่อยู่ไฟล์ */
-    background-image: url('https://v.fastcdn.co/u/a34a810d/62029532-0-Pattern-Grid.png');
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
 }
 
-header {
-    /* 2. linear-gradient() - ไล่สีจากฟ้าไปน้ำเงิน */
-    background: linear-gradient(90deg, #4A90E2, #1456a3);
+.external-card {
+    /* ฟังก์ชันที่ 1: min() 
+       เลือกค่าที่น้อยที่สุดระหว่าง 600px กับ 90% ของหน้าจอ */
+    width: min(600px, 90%);
+
+    /* ฟังก์ชันที่ 2: rgba() 
+       สีขาวที่โปร่งใสเล็กน้อย (0.95) เพื่อให้เห็นพื้นหลังลางๆ */
+    background-color: rgba(255, 255, 255, 0.95);
+
+    padding: 30px;
+    border-radius: 12px;
     
-    /* 3. var() - ใช้ค่าจากตัวแปรที่ตั้งไว้ด้านบน */
-    border-bottom: 5px solid var(--primary-color);
-    color: white;
-    padding: 40px;
+    /* ฟังก์ชันที่ 3: var() 
+       ดึงค่าสีจากตัวแปรที่ตั้งไว้ด้านบนมาใช้ */
+    border-top: 8px solid var(--secondary-accent);
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     text-align: center;
+}
+
+h2 {
+    color: var(--secondary-accent);
 }
